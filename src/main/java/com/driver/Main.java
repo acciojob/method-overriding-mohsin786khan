@@ -4,27 +4,25 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String [] args){
+   public static class A{
 
-        B obj=new B();
-        String ans=obj.meth();
-        System.out.println(ans);
-         A obj1 = new B();
-        System.out.println(obj1.meth());
+       public String meth(){
+           return "Invoking method from class A";
+       }
+   }
+
+   public static class B extends A{
+
+       public String meth(){
+           return "Method is overridden in Extendend class B";
+       }
+   }
+
+
+    public static void main(String [] args) {
+      B obj=new B();
+      obj.meth();
     }
 }
 
-class A {
-    String meth(){
 
-        return "Invoking method from class A" ;
-    }
-}
-
-class B extends A {
-
-    String meth(){
-
-        return "Method is overridden in Extendend class B";
-    }
-}
